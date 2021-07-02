@@ -1,0 +1,59 @@
+<div class="container">
+  <h2 class="text-center">Calculator</h2>
+  <hr />
+  <div class="row">
+    <!--top buttons-->
+    <div class="col-md-6 col-sm-12 left-column">
+      <!--Button controls-->
+      <div class="row">
+        <div class="col-9"><h2>Simple Calculator</h2></div>
+        <button class="col btn btn-danger btn-lg" (click)="allClear()">Clear</button>
+      </div>
+      <!-- 1st row nums-->
+      <div class="row">
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('1')">1</button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('2')">2</button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('3')">3</button>
+        <button class="col btn btn-dark btn-lg" (click)="pressOperator('+')">+</button>
+
+      </div>
+
+      <!-- 2nd row nums-->
+      <div class="row">
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('4')">4</button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('5')">5</button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('6')">6</button>
+        <button class="col btn btn-dark btn-lg" (click)="pressOperator('-')">-</button>
+
+      </div>
+
+      <!-- 3rd row nums-->
+      <div class="row">
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('7')">7</button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('8')">8</button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('9')">9</button>
+        <button class="col btn btn-dark btn-lg" (click)="pressOperator('*')">*</button>
+
+      </div>
+
+      <!-- 4TH row nums-->
+      <div class="row">
+        <button class="btn btn-primary btn-lg col"> </button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('.')">.</button>
+        <button class="btn btn-primary btn-lg col" (click)="pressNum('0')">0</button>
+        <button class="col btn btn-dark btn-lg" (click)="pressOperator('/')">/</button>
+
+        <!-- <button class="btn btn-success btn-lg col" (click)="getAnswer()">=</button> -->
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+      <div class="row bg-dark p-2" style="border-left: solid 1px white;">
+        <h2>Result:</h2>
+      </div>
+      <h1 class="p-1">{{input}}</h1>
+      <hr />
+      <h1 class="p-2" style="font-size: 5rem;">{{result}}</h1>
+    </div>
+  </div>
+</div>

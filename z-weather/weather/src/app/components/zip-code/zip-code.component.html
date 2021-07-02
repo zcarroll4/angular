@@ -1,0 +1,52 @@
+<div class="container mb-5">
+    <h2 class="text-center">Get Today's Weather - Input Zip Code</h2>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <div class="row">
+          <div class="col-8 offset-2 card text-center mt-3">
+            <div class="card-body p-5">
+              <h4 class="card-title">Enter Zip Code:</h4>
+              <form class="form">
+                <div class="card-text form-group form-group-lg">
+                  <input #fieldName (keyup)="processKeyup(fieldName.value)" type="text"
+                    style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control input-lg" name="zip"
+                    id="" value=""/>
+                </div>
+                <!-- <input type="submit" id="get-weather-btn" value="Get Weather" class="btn btn-primary btn-lg"/>  -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showRightCol" class="col-lg-6 col-sm-12" id="right-column">
+        <div class="row">
+          <div class="col-10 offset-1 card text-center mt-3">
+            <div class="row">
+              <div class="col-12">
+                <img src="{{weatherData.weatherIcon}}" style="width:25%;"/>
+              </div>
+              <div class="col">
+                <h2>{{weatherData.temp}}°</h2>
+                <!-- <h4>Feels Like: {{weatherData.feelsLike}}°</h4> -->
+                <h4>High: {{weatherData.tempHigh}}°</h4>
+                <h4>Low: {{weatherData.tempMin}}°</h4>
+              </div>
+
+              <div class="col">
+                  <h3>{{weatherData.weatherOverview}}</h3>
+                  <h4>{{weatherData.weatherDescription}}</h4>
+                  <h5>Humidity: {{weatherData.humidity}}%</h5>
+                  <h5>Winds: {{weatherData.windSpeed}} mph | {{degToCompass(weatherData.windDirection)}} ({{weatherData.windDirection}}°)</h5>
+              </div>
+
+              <div class="col-12">
+                <h5>{{weatherData.city}} - {{weatherData.country}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

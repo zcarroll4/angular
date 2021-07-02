@@ -1,0 +1,102 @@
+<div class="container">
+  <h2 class="text-center">Retirement Income Calculator</h2>
+  <hr />
+  <div class="row">
+    <!--Left Col-->
+    <div class="col-md-6 col-sm-12">
+      <div class="row">
+        <div class="col-8 offset-2 text-center">
+          <form class="form">
+            <div class="row">
+              <div class="col text-center">
+                <div class="form-group form-group-lg">
+                  <label>Monthly Contributions:</label>
+                  <input #monthlyContributions
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="text" style="text-align:center;width: 75%; margin: auto; margin-bottom: 5px;"
+                    class="form-control input-lg" name="monthlyContributions" id="monthlyContributions" value=""
+                    placeholder="" ng-change="clickfunction()" step="100" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+
+                <div class="form-group form-group-lg">
+                  <label>Starting Age:</label>
+                  <input #startAge
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="text" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control input-lg"
+                    name="startAge" id="startAge" value="25" placeholder=""/>
+                  </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group form-group-lg">
+                  <label>Retirement Age:</label>
+                  <input #retireAge
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="text" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control input-lg"
+                    name="retireAge" id="retireAge" value="65" placeholder="" />
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group form-group-lg">
+                  <label>Avg. Return %:</label>
+                  <input #expReturn
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="text" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control input-lg"
+                    name="expReturn" id="expReturn" value="7" ng-click="clickFunction()" ng-change="clickfunction()"
+                    placeholder="" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group form-group-lg">
+                  <label>Retirement Yield %:</label>
+                  <input #retirementYield
+                    (keyup)="processKeyup(startAge.value, retireAge.value, monthlyContributions.value, expReturn.value, retirementYield.value )"
+                    type="text" style="width: 75%; margin: auto; margin-bottom: 5px;" class="form-control input-lg"
+                    name="expReturn" id="retirementYield" value="4" ng-click="clickFunction()"
+                    ng-change="clickfunction()" placeholder="" />
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--  processKeyup(startAge: number, retireAge : number, monthlyContributions : number, expReturn : number ){-->
+    <!--Right Col-->
+    <div class="col-md-6 col-sm-12">
+      <div class="row">
+        <div class="col-8 offset-2 text-center">
+          <div class="row">
+            <div class="col-xs-1-12 p-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Portfolio Balance</h3>
+                  <p class="card-text">{{ balance | currency:'USD' }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-1-12 p-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title">Retirement Income</h3>
+                  <p class="card-text">{{ income | currency:'USD' }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,9 @@
+body {
+  font-size: 2rem;
+}
+
+.btn-lg {
+  font-size: 2rem;
+  border-radius: 0%;
+  border: solid white 1px;
+}
